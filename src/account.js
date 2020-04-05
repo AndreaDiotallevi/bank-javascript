@@ -1,6 +1,9 @@
+const Statement = require("./statement");
+
 class Account {
-  constructor() {
+  constructor(statement = new Statement()) {
     this.balance = 0;
+    this.statement = statement;
   }
 
   getBalance() {
@@ -9,6 +12,7 @@ class Account {
 
   deposit(amount) {
     this.balance += amount;
+    this.statement.addTransaction(amount, 0, this.balance);
     return this.balance;
   }
 
