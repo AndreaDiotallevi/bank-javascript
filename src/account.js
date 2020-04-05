@@ -13,6 +13,9 @@ class Account {
   }
 
   withdraw(amount) {
+    if (this.balance - amount < 0) {
+      throw("Not enough balance");
+    }
     this.balance -= amount;
     return this.balance;
   }

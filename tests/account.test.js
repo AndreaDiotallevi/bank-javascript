@@ -21,5 +21,10 @@ describe("Account", () => {
       account.deposit(1);
       expect(account.withdraw(1)).toEqual(0);
     })
+
+    it("should raise an error if the user tries to withdraw more than the actual balance", () => {
+      let account = new Account();
+      expect(() => { account.withdraw(1); }).toThrow("Not enough balance");
+    })
   })
 })
