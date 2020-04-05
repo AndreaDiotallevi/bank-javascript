@@ -4,6 +4,10 @@ class Account {
   getBalance() {
     return 0
   }
+
+  deposit() {
+    return 1
+  }
 }
 
 module.exports = Account;
