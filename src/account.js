@@ -1,12 +1,14 @@
 class Account {
-  constructor() {}
+  constructor() {
+    this.balance = 0;
+  }
 
   getBalance() {
-    return 0
+    return this.balance;
   }
 
   deposit() {
-    return 1
+    return this.balance + 1;
   }
 }
 
