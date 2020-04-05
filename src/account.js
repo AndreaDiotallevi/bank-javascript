@@ -21,11 +21,12 @@ class Account {
       throw("Not enough balance");
     }
     this.balance -= amount;
+    this.statement.addTransaction(0, amount, this.balance);
     return this.balance;
   }
 
   printStatement() {
-    console.log("date || credit || debit || balance\n10/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00");
+    console.log(this.statement.formatTransactions());
   }
 }
 

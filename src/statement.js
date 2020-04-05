@@ -1,6 +1,10 @@
 const Transacion = require("./transaction");
 
 class Statement {
+  static get Header() {
+    return "date || credit || debit || balance";
+  }
+
   constructor(transactionClass = Transacion) {
     this.transactions = [];
     this.transactionClass = transactionClass
@@ -12,7 +16,11 @@ class Statement {
   }
 
   formatTransactions() {
-    return "date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00"
+    let formattedTransactions = Statement.Header;
+    this.transactions.reverse().map(transaction => {
+      formattedTransactions += "\n" + transaction.format();
+    })
+    return formattedTransactions;
   }
 }
 
