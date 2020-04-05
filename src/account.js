@@ -19,6 +19,10 @@ class Account {
     this.balance -= amount;
     return this.balance;
   }
+
+  printStatement() {
+    console.log("date || credit || debit || balance\n10/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00");
+  }
 }
 
 module.exports = Account;

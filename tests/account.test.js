@@ -27,4 +27,15 @@ describe("Account", () => {
       expect(() => { account.withdraw(1); }).toThrow("Not enough balance");
     })
   })
+
+  describe("printStatement", () => {
+    it("should print a formatted table with transactions date, credit, debit and balance, in reverse chronological order", () => {
+      const log = jest.spyOn(global.console, 'log');
+      let account = new Account();
+      account.deposit(1000);
+      account.withdraw(500);
+      account.printStatement();
+      expect(log).toHaveBeenCalledWith("date || credit || debit || balance\n10/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00");
+    })
+  })
 })
