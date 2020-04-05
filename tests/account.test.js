@@ -14,4 +14,12 @@ describe("Account", () => {
       expect(account.deposit(1)).toEqual(1);
     })
   })
+
+  describe("withdraw", () => {
+    it("should return the updated balance of 0 after a withdrawal of 1 from a balance of 1", () => {
+      let account = new Account();
+      account.deposit(1);
+      expect(account.withdraw(1)).toEqual(0);
+    })
+  })
 })

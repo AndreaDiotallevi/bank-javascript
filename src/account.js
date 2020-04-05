@@ -7,8 +7,14 @@ class Account {
     return this.balance;
   }
 
-  deposit() {
-    return this.balance + 1;
+  deposit(amount) {
+    this.balance += amount;
+    return this.balance;
+  }
+
+  withdraw(amount) {
+    this.balance -= amount;
+    return this.balance;
   }
 }
 
