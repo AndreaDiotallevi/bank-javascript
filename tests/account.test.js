@@ -1,4 +1,7 @@
 const Account = require("../src/account");
+const Statement = require("../src/statement");
+
+jest.mock("../src/statement");
 
 describe("Account", () => {
   let account;
@@ -32,10 +35,19 @@ describe("Account", () => {
 
   describe("printStatement", () => {
     it("should print a formatted table with transactions date, credit, debit and balance, in reverse chronological order", () => {
+      Statement.mockImplementation(() => {
+        return {
+          addTransaction: () => {},
+          formatTransactions: () => {
+            return "date || credit || debit || balance\n10/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00";
+          }
+        }
+      })
+      let account2 = new Account();
       const log = jest.spyOn(global.console, 'log');
-      account.deposit(1000);
-      account.withdraw(500);
-      account.printStatement();
+      account2.deposit(1000);
+      account2.withdraw(500);
+      account2.printStatement();
       expect(log).toHaveBeenCalledWith("date || credit || debit || balance\n10/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00");
     })
   })
