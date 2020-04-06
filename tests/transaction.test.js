@@ -3,7 +3,7 @@ const Transaction = require("../src/transaction");
 describe("Transaction", () => {
   describe("format", () => {
     it("should return a formatted transaction", () => {
-      const mockDate = new Date("2012-10-10");
+      const mockDate = new Date("2012/10/10");
       const spy = jest
         .spyOn(global, 'Date')
         .mockImplementation(() => mockDate);
