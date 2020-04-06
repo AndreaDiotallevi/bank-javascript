@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/AndreaDiotallevi/bank-javascript.svg?style=shield)](https://circleci.com/gh/AndreaDiotallevi/bank-javascript) [![Test Coverage](https://api.codeclimate.com/v1/badges/49f61ac8753001b70d91/test_coverage)](https://codeclimate.com/github/AndreaDiotallevi/bank-javascript/test_coverage)
+
 [Description](#description) | [Requirements](#requirements) | [Acceptance Criteria](#acceptance-criteria) | [User Stories](#user-stories) | [Domain Models](#domain-models) | [Design Approach](#design-approach) | [Code Structure](#code-structure) | [Technologies Used](#technologies-used) | [Getting Started](#getting-started) | [How to Run the Tests](#how-to-run-the-tests) | [How to Run the App](#how-to-run-the-app) | [Feature Test](#feature-test)
 
 ## Description
