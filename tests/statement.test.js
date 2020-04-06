@@ -21,12 +21,12 @@ describe("Statement", () => {
       Transaction.mockImplementation(() => {
         return {
           format: () => {
-            return "10/01/2012 || 1000.00 || || 1000.00";
+            return "10/10/2012 || 1000.00 || || 1000.00";
           }
         }
       })
       statement.addTransaction(1000, 0, 1000);
-      expect(statement.formatTransactions()).toEqual("date || credit || debit || balance\n10/01/2012 || 1000.00 || || 1000.00");
+      expect(statement.formatTransactions()).toEqual("date || credit || debit || balance\n10/10/2012 || 1000.00 || || 1000.00");
     })
   })
 })

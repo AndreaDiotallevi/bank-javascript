@@ -39,7 +39,7 @@ describe("Account", () => {
         return {
           addTransaction: () => {},
           formatTransactions: () => {
-            return "date || credit || debit || balance\n10/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00";
+            return "date || credit || debit || balance\n10/10/2012 || || 500.00 || 500.00\n10/10/2012 || 1000.00 || || 1000.00";
           }
         }
       })
@@ -48,7 +48,7 @@ describe("Account", () => {
       account2.deposit(1000);
       account2.withdraw(500);
       account2.printStatement();
-      expect(log).toHaveBeenCalledWith("date || credit || debit || balance\n10/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00");
+      expect(log).toHaveBeenCalledWith("date || credit || debit || balance\n10/10/2012 || || 500.00 || 500.00\n10/10/2012 || 1000.00 || || 1000.00");
     })
   })
 })
